@@ -25,12 +25,12 @@ const ChooseUsSection = () => {
             <div className='container mx-auto'>
                 <p className="text-blue-100 text-center">Why You Choose Us</p>
                 <h2 className="text-center text-4xl text-white">What’s Our Speciality</h2>
-                <ul className='tab-list flex justify-center my-12 '>
+                <ul className='tab-list mx-4 md:mx-0 flex justify-center my-12 '>
                     <li
                         className={
                             activeTab === "tab1"
-                                ? "cursor-pointer pb-2 md:text-3xl font-semibold border-b-4 md:px-4 border-blue-600 text-white"
-                                : "cursor-pointer pb-2 border-b-4 border-blue-300 hover:border-blue-600 md:px-4 md:text-3xl text-lg font-semibold text-blue-300 hover:text-white"
+                                ? "cursor-pointer text-center pb-2 md:text-3xl text-sm font-semibold border-b-4 md:px-4 border-blue-600 text-white"
+                                : "cursor-pointer pb-2 border-b-4 border-blue-300 hover:border-blue-600 md:px-4 md:text-3xl text-sm font-semibold text-center text-blue-300 hover:text-white"
                         }
                         onClick={handleTab1}
                     >
@@ -39,8 +39,8 @@ const ChooseUsSection = () => {
                     <li
                         className={
                             activeTab === "tab2"
-                                ? "cursor-pointer pb-2 md:text-3xl text-lg font-semibold border-b-4 md:px-4 border-blue-600 text-white"
-                                : "cursor-pointer pb-2 border-b-4 border-blue-300 hover:border-blue-600 md:px-4 md:text-3xl text-lg font-semibold text-blue-300 hover:text-white"
+                                ? "cursor-pointer pb-2 md:text-3xl text-center text-sm font-semibold border-b-4 md:px-4 border-blue-600 text-white"
+                                : "cursor-pointer pb-2 border-b-4 border-blue-300 hover:border-blue-600 md:px-4 md:text-3xl text-sm font-semibold text-blue-300 text-center hover:text-white"
                         }
                         onClick={handleTab2}
                     >
@@ -49,8 +49,8 @@ const ChooseUsSection = () => {
                     <li
                         className={
                             activeTab === "tab3"
-                                ? "cursor-pointer pb-2 md:text-3xl text-lg font-semibold border-b-4 md:px-4 border-blue-600 text-white"
-                                : "cursor-pointer pb-2 border-b-4 border-blue-300 hover:border-blue-600 md:px-4 md:text-3xl text-lg font-semibold text-blue-300 hover:text-white"
+                                ? "cursor-pointer pb-2 md:text-3xl text-sm text-center font-semibold border-b-4 md:px-4 border-blue-600 text-white"
+                                : "cursor-pointer pb-2 border-b-4 border-blue-300 hover:border-blue-600 md:px-4 md:text-3xl text-center text-sm font-semibold text-blue-300 hover:text-white"
                         }
                         onClick={handleTab3}
                     >

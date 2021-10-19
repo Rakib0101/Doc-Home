@@ -26,7 +26,7 @@ const SignUp = () => {
                         <p className='my-4'>
                             And enjoy life during the time you just saved!
                         </p>
-                        <p>{error}</p>
+                        <p className="text-red-600">{error}</p>
                         <form action='' onSubmit={registerWithEmailAndPass}>
                             <div className='flex justify-between mb-2'>
                                 <div className='w-1/2 mr-2'>
@@ -56,7 +56,7 @@ const SignUp = () => {
                                 <input
                                     onBlur={getPassword}
                                     className='w-full glass-effect rounded py-2 pl-4'
-                                    type='text'
+                                    type='password'
                                     placeholder='Password'
                                 />
                             </div>

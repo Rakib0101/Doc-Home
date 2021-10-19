@@ -9,7 +9,7 @@ const ResponsiveHeader =({ fixed }) =>{
     const barsIcon = <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
     return (
         <>
-            <div className='flex flex-wrap py-2'>
+            <div className='flex flex-wrap py-2 transition-all delay-1000'>
                 <div className='w-full'>
                     <nav className='relative flex flex-wrap items-center justify-between rounded'>
                         <div className='container mx-auto flex flex-wrap items-center justify-between'>

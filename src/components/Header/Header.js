@@ -1,6 +1,6 @@
 import React from 'react';
 import ResponsiveHeader from '../ResponsiveHeader/ResponsiveHeader';
-import TopHeader from './TopHeader.js/TopHeader';
+import TopHeader from './TopHeader/TopHeader';
 
 const Header = () => {
     

@@ -5,10 +5,10 @@ import certified from "../../img/certified.jpg"
 const CertifiedDoctors = () => {
     return (
         <div>
-            <div className='glass-effect rounded-xl p-8 flex flex-col-reverse md:flex-row'>
+            <div className='glass-effect mx-4 md:mx-0 rounded-xl p-8 flex flex-col-reverse md:flex-row'>
                 <div className='md:w-2/5 w-full md:mr-8'>
-                    <h2 className="text-4xl mb-8 primary-color">Certified Doctors</h2>
-                    <p>
+                    <h2 className="md:text-4xl text-2xl mb-8 text-white">Certified Doctors</h2>
+                    <p className="text-white">
                         Our goal is to deliver quality of care in a courteous,
                         respectful, and compassionate manner. We hope you will
                         allow us to care for you and to be the first and best

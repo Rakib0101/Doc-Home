@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const SingleDoctor = (props) => {
     const {docImg, docName, docPosition, docId} =props.doctor
     return (
-        <div className='text-center glass-effect p-4 rounded-md'>
+        <div className='text-center glass-effect mx-8 md:mx-0 p-4 rounded-md'>
             <img className='w-48 mx-auto h-48 rounded-full' src={docImg} alt='' />
             <h2 className='primary-color font-bold'>{docName}</h2>
             <h2>{docPosition}</h2>

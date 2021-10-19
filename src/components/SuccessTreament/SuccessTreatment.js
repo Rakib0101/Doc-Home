@@ -5,13 +5,13 @@ import success from '../../img/success.jpg'
 const SuccessTreatment = () => {
     return (
         <div>
-            <div className='glass-effect rounded-xl p-8'>
+            <div className='glass-effect mx-4 md:mx-0 rounded-xl p-8'>
                 <div className='md:flex-row flex flex-col-reverse'>
                     <div className='md:w-1/3 w-full md:mr-8'>
-                        <h2 className='text-4xl mb-8 primary-color'>
+                        <h2 className='md:text-4xl text-2xl mb-8 text-white'>
                             Together we can Achieve more things
                         </h2>
-                        <p>
+                        <p className="text-white">
                             Our goal is to deliver quality of care in a
                             courteous, respectful, and compassionate manner. We
                             hope you will allow us to care for you and to be the
