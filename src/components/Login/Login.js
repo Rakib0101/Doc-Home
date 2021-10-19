@@ -50,13 +50,13 @@ const Login = () => {
                         <div className='flex justify-between my-8'>
                             <button
                                 onClick={handleGoogleSignIn}
-                                className='px-4 py-2 w-full mr-2 custom-color border-custom'
+                                className='px-4 py-2 w-full mr-2 bg-color border-custom'
                             >
                                 {googleImg} Sign up with Google
                             </button>
                             <button
                                 onClick={handleGithubSignIn}
-                                className='px-4 py-2 w-full ml-2 custom-color border-custom'
+                                className='px-4 py-2 w-full ml-2 bg-color border-custom'
                             >
                                 {githubImg} Sign up with Github
                             </button>
