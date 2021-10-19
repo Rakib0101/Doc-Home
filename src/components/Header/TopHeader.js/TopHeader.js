@@ -39,7 +39,7 @@ const TopHeader = () => {
             </div>
             <div className="w-1/3">
                 <div className=''>
-                    {user?.email ? (
+                    {(user?.email || user?.displayName) ? (
                         <div className="text-right relative">
                             <h2
                                 onClick={toggle}

@@ -5,7 +5,7 @@ const SingleService = (props) => {
 
     const {title, description, image, id} = props.service
     return (
-        <div className='text-center bg-blue-300 rounded p-4'>
+        <div className='text-center bg-blue-300 mx-4 md:mx-0 rounded p-4'>
             <img
                 className='mx-auto bg-white hover:bg-purple-400 rounded-full p-4 w-24 h-24'
                 src={image}

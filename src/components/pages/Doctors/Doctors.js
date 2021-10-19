@@ -23,7 +23,7 @@ const Doctors = () => {
                     people skills and trained to assist you with all medical
                     enquiries.
                 </p>
-                <div className='grid grid-cols-4 gap-8'>
+                <div className='grid md:grid-cols-4 grid-cols-1 gap-8'>
                     {doctors.map((doctor) => (
                         <SingleDoctor
                             key={doctor.docId}

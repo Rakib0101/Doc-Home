@@ -29,7 +29,7 @@ const Services = () => {
                     <h2 className='text-2xl text-center pb-8'>
                         Providing Medical Care For The Sickest In Our Community.
                     </h2>
-                    <div className='grid grid-cols-3 gap-4'>
+                    <div className='grid md:grid-cols-3 grid-cols-1 gap-4'>
                         {services.map((service) => (
                             <SingleService
                                 key={service.id}

@@ -4,7 +4,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import signUp from '../../img/signup.png'
-import { useLocation } from 'react-router-dom';
 
 const SignUp = () => {
     const {
@@ -16,14 +15,13 @@ const SignUp = () => {
         error,
         registerWithEmailAndPass,
     } = useAuth();
-    const location = useLocation()
     const googleImg = <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>;
     const githubImg = <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>;
     return (
         <div className='bg-color'>
-            <div className='container mx-auto flex items-center'>
-                <div className='w-3/5 text-white'>
-                    <div className='glass-effect p-8 m-12 rounded-lg'>
+            <div className='container mx-auto flex flex-col-reverse md:flex-row items-center'>
+                <div className='md:w-3/5 w-full text-white'>
+                    <div className='glass-effect p-8 md:m-12 m-4 rounded-lg'>
                         <h2 className='custom-color text-4xl'>Sign Up</h2>
                         <p className='my-4'>
                             And enjoy life during the time you just saved!
@@ -80,16 +78,16 @@ const SignUp = () => {
                                 />
                             </div>
                         </form>
-                        <div className='flex justify-between my-8'>
+                        <div className='flex flex-col md:flex-row justify-between my-8'>
                             <button
                                 onClick={handleGoogleSignIn}
-                                className='px-4 py-2 w-full mr-2 bg-color rounded'
+                                className='px-4 py-2 mb-2 md:mb-0 w-full mr-2 bg-color rounded'
                             >
                                 {googleImg} Sign up with Google
                             </button>
                             <button
                                 onClick={handleGithubSignIn}
-                                className='px-4 py-2 w-full ml-2 bg-color rounded'
+                                className='px-4 py-2 w-full md:ml-2 bg-color rounded'
                             >
                                 {githubImg} Sign up with Github
                             </button>
@@ -102,7 +100,7 @@ const SignUp = () => {
                         </h2>
                     </div>
                 </div>
-                <div className='w-2/5'>
+                <div className='md:w-2/5 w-full'>
                     <img src={signUp} alt='' />
                 </div>
             </div>

@@ -9,8 +9,8 @@ const AboutUsSecond = () => {
     return (
         <div>
             <div className='container mx-auto'>
-                <div className='flex items-center'>
-                    <div className='w-1/2 p-4'>
+                <div className='flex md:flex-row flex-col items-center'>
+                    <div className='md:w-1/2 w-full p-4'>
                         <h2>HIGHEST QUALITY CARE</h2>
                         <h2 className='text-4xl pt-4 primary-color font-bold'>
                             Complete Medical Solutions in One Place
@@ -75,7 +75,7 @@ const AboutUsSecond = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='w-1/2 pt-12'>
+                    <div className='md:w-1/2 w-full pt-12'>
                         <img src={image} alt='' />
                     </div>
                 </div>

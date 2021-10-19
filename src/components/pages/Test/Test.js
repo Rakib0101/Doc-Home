@@ -25,7 +25,7 @@ const Test = () => {
                     <h2 className='text-4xl text-center text-white mb-8'>
                         We offer discounts for this tests
                     </h2>
-                    <div className='grid grid-cols-2 gap-8'>
+                    <div className='grid md:grid-cols-2 grid-cols-1 gap-8'>
                         {tests.map((test) => (
                             <SingleTest
                                 key={test.testId}

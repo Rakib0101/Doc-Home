@@ -9,7 +9,7 @@ const SingleService = () => {
     const service = services?.find(ser => ser.id === id)
     return (
         <div
-            className='h-screen'
+            className='md:h-screen py-12 md:py-0'
             style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(${serviceBg})`,
                 backgroundSize: "cover",

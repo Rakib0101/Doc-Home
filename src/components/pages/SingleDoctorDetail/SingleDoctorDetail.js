@@ -21,9 +21,9 @@ const SingleDoctorDetail = () => {
                     backgroundSize: "cover",
                 }}
             >
-                <div className='container mx-auto flex'>
+                <div className='container mx-auto flex flex-col md:flex-row'>
                     <div className='w-1/2'></div>
-                    <div className='w-1/2'>
+                    <div className='md:w-1/2 w-full'>
                         <h2 className='text-white  text-4xl'>
                             {doctor?.docName}
                         </h2>
@@ -34,18 +34,18 @@ const SingleDoctorDetail = () => {
                 </div>
             </div>
             <div className='container mx-auto'>
-                <div className='flex'>
-                    <div className='w-2/5 pr-12 '>
-                        <img className='-mt-32' src={doctor?.docImg} alt='' />
+                <div className='flex flex-col md:flex-row'>
+                    <div className='md:w-2/5 w-full md:pr-12 '>
+                        <img className='md:-mt-32 -mt-16' src={doctor?.docImg} alt='' />
                         <div>
                             <h2 className="text-center text-3xl mt-8 primary-color font-bold">Contact Info</h2>
-                            <div>
+                            <div className="text-center md:text-left">
                                 <h2>{phoneIcon} {doctor?.docContact?.mob}</h2>
                                 <h2>{emailIcon} {doctor?.docContact?.email}</h2>
                             </div>
                         </div>
                     </div>
-                    <div className='w-3/5 pt-4 pl-12'>
+                    <div className='md:w-3/5 w-full pt-4 pl-12'>
                         <h2 className='text-4xl pb-4'>About Me:</h2>
                         <p>{doctor?.docDesc}</p>
                         <div className='grid grid-cols-1 gap-y-4'>

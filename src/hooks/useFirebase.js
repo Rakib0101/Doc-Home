@@ -24,7 +24,7 @@ const useFirebase = () => {
     const [userPassword, setUserPassword] = useState(" ");
     const [user, setUser] = useState([]);
     const [error, setError] = useState([]);
-    const [isLogin, setIsLogin] = useState([true])
+    const [isLogin, setIsLogin] = useState(true);
 
     const getName = (e) => {
         setUserName(e.target.value);
@@ -38,7 +38,7 @@ const useFirebase = () => {
         setUserPassword(e.target.value);
     };
     const handleGoogleSignIn = () => {
-        setIsLogin(true)
+        setIsLogin(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 setUser(result.user);
@@ -50,7 +50,7 @@ const useFirebase = () => {
             });
     };
     const handleGithubSignIn = () => {
-        setIsLogin(true)
+        setIsLogin(true);
         signInWithPopup(auth, githubProvider)
             .then((result) => {
                 setUser(result.user);
@@ -63,7 +63,7 @@ const useFirebase = () => {
     };
     const registerWithEmailAndPass = (e) => {
         e.preventDefault();
-        setIsLogin(true)
+        setIsLogin(true);
         createUserWithEmailAndPassword(auth, userEmail, userPassword, userName)
             .then((result) => {
                 setUser(result.user);
@@ -72,23 +72,23 @@ const useFirebase = () => {
                 });
                 history.push("/");
             })
-            .finally(() => setIsLogin(false))
             .catch((err) => {
-                setError(err.message);
-            });
+                setError(err.message)
+            })
+            .finally(() => setIsLogin(false));
     };
     const handleEmailAndPassword = (e) => {
         e.preventDefault();
-        setIsLogin(true)
+        setIsLogin(true);
         signInWithEmailAndPassword(auth, userEmail, userPassword)
             .then((result) => {
                 setUser(result.user);
                 history.push("/");
             })
-            .finally(() => setIsLogin(false))
             .catch((err) => {
                 setError(err);
-            });
+            })
+            .finally(() => setIsLogin(false));
     };
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -97,15 +97,15 @@ const useFirebase = () => {
             } else {
                 setUser({});
             }
-            setIsLogin(false)
+            setIsLogin(false);
         });
     }, [auth]);
 
     const logOut = () => {
         signOut(auth).then(() => {
-            
             setUser({});
         });
+        setIsLogin(true)
     };
     console.log(userName);
     return {
@@ -115,11 +115,14 @@ const useFirebase = () => {
         registerWithEmailAndPass,
         getName,
         getEmail,
+        setIsLogin,
+        setError,
+        setUser,
         getPassword,
         logOut,
         user,
         error,
-        isLogin
+        isLogin,
     };
 };
 
