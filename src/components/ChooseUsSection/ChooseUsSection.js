@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ModernTechnology from '../ModernTechnology/ModernTechnology';
 import SuccessTreatment from "../SuccessTreament/SuccessTreatment";
 import CertifiedDoctors from "../CertifiedDoctors/CertifiedDoctors";
+import bg from '../../img/bg-3.jpg'
 
 const ChooseUsSection = () => {
     const [activeTab, setActiveTab] = useState("tab1");
@@ -15,7 +16,12 @@ const ChooseUsSection = () => {
         setActiveTab("tab3");
     };
     return (
-        <div className='bg-color py-8'>
+        <div
+            style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bg})`,
+                backgroundAttachment: 'fixed',
+            }}
+            className='py-8'>
             <div className='container mx-auto'>
                 <p className="text-blue-100 text-center">Why You Choose Us</p>
                 <h2 className="text-center text-4xl text-white">What’s Our Speciality</h2>

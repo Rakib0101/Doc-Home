@@ -5,7 +5,7 @@ import certified from "../../img/certified.jpg"
 const CertifiedDoctors = () => {
     return (
         <div>
-            <div className='bg-white p-8 flex flex-col-reverse md:flex-row'>
+            <div className='glass-effect rounded-xl p-8 flex flex-col-reverse md:flex-row'>
                 <div className='md:w-2/5 w-full md:mr-8'>
                     <h2 className="text-4xl mb-8 primary-color">Certified Doctors</h2>
                     <p>

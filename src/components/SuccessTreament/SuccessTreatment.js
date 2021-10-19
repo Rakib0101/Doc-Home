@@ -5,7 +5,7 @@ import success from '../../img/success.jpg'
 const SuccessTreatment = () => {
     return (
         <div>
-            <div className='bg-white p-8'>
+            <div className='glass-effect rounded-xl p-8'>
                 <div className='md:flex-row flex flex-col-reverse'>
                     <div className='md:w-1/3 w-full md:mr-8'>
                         <h2 className='text-4xl mb-8 primary-color'>

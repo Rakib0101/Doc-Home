@@ -4,23 +4,23 @@ import FooterTop from './FooterTop/FooterTop';
 
 const Footer = () => {
     return (
-        <div className='bg-green-200'>
+        <div className='bg-black'>
             <FooterTop></FooterTop>
-            <hr className="h-2 text-black" />
+            <hr className="h-2 text-white" />
             <div className='container mx-auto py-4'>
-                <div className=' text-lg flex flex-col md:flex-row justify-between'>
-                    <div>
+                <div className=' text-lg flex text-white flex-col md:flex-row justify-between'>
+                    <div className="text-center md:text-left">
                         <p>All rights are reserverd</p>
                     </div>
                     <nav>
-                        <ul className="flex">
-                            <li>
+                        <ul className="flex flex-col md:flex-row text-center md:text-left">
+                            <li className="px-2 hover:text-green-600">
                                 <Link to="/">Terms and Services</Link>
                             </li>
-                            <li>
+                            <li className="px-2 hover:text-green-600">
                                 <Link to="/">Privacy Policy</Link>
                             </li>
-                            <li>
+                            <li className="px-2 hover:text-green-600">
                                 <Link to="/">Cockies</Link>
                             </li>
                         </ul>

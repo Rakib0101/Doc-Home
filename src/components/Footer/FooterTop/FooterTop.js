@@ -15,8 +15,8 @@ const FooterTop = () => {
         <div>
             <div className='container py-12 mx-auto'>
                 <div className='flex md:flex-row flex-col'>
-                    <div className='text-black w-2/6'>
-                        <div className='text-black'>
+                    <div className='text-white w-full px-4 md:w-2/6'>
+                        <div className='text-white'>
                             <img src={logo} alt='' />
                             <p className='py-4'>
                                 Our goal is to deliver quality of care in a
@@ -30,8 +30,8 @@ const FooterTop = () => {
                             </button>
                         </div>
                     </div>
-                    <div className='text-black w-1/6'>
-                        <div className='text-black'>
+                    <div className='text-white w-full px-4 md:w-1/6'>
+                        <div className='text-white'>
                             <h2 className='text-2xl font-bold pb-4'>Departments</h2>
                             <ul>
                                 <li className=' py-2 text-lg'>
@@ -67,8 +67,8 @@ const FooterTop = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className='text-black w-1/6'>
-                        <div className='text-black'>
+                    <div className='text-white px-4 w-full md:w-1/6'>
+                        <div className='text-white'>
                             <h2 className='text-2xl font-bold pb-4'>
                                 Important Links
                             </h2>
@@ -106,7 +106,7 @@ const FooterTop = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className='bg-white rounded-lg w-2/6 p-8'>
+                    <div className='bg-white rounded-lg w-5/6 mx-auto md:w-2/6 p-8'>
                         <div className='text-center'>
                             <h2 className='text-2xl'>Quick Contacts</h2>
                             <p>
@@ -118,11 +118,11 @@ const FooterTop = () => {
                                 2307 Beverley Rd Brooklyn, New York 11226 United
                                 States.
                             </p>
-                            <div className='flex '>
-                                <div className="w-2/3">
+                            <div className='flex flex-col md:flex-row'>
+                                <div className="md:w-2/3 w-full">
                                     <button>{arrowIcon} Get Directions</button>
                                 </div>
-                                <div className='w-1/3'>
+                                <div className='md:w-1/3 w-full'>
                                     <span className="px-1">{facebookIcon}</span>
                                     <span className="px-1">{twitterIcon}</span>
                                     <span className="px-1">{instagramIcon}</span>
