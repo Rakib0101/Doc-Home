@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Login from "./components/Login/Login";
+import MyAccount from "./components/MyAccount/MyAccount";
 import NotFound from "./components/NotFound/NotFound";
 import AboutUs from "./components/pages/AboutUs/AboutUs";
 import Contact from "./components/pages/Contact/Contact";
@@ -51,13 +52,19 @@ function App() {
                         <PrivateRoute exact path='/tests/:id'>
                             <SingleTestDetail></SingleTestDetail>
                         </PrivateRoute>
+                        <PrivateRoute exact path='/my-account'>
+                            <MyAccount></MyAccount>
+                        </PrivateRoute>
                         <Route exact path='/login'>
                             <Login></Login>
                         </Route>
                         <Route exact path='/sign-up'>
                             <SignUp></SignUp>
                         </Route>
-                        <Route path="*">
+                        <Route exact path='/my-account'>
+                            <MyAccount></MyAccount>
+                        </Route>
+                        <Route path='*'>
                             <NotFound></NotFound>
                         </Route>
                     </Switch>

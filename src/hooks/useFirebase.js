@@ -11,14 +11,10 @@ import {
     signOut,
 } from "firebase/auth";
 import firebaseInit from "../firebase/firebase.init";
-import { useHistory } from "react-router-dom";
 
 firebaseInit();
 const useFirebase = () => {
-    const googleProvider = new GoogleAuthProvider(); //Google Provider
-    const githubProvider = new GithubAuthProvider(); //Github Provider
     const auth = getAuth();
-    const history = useHistory();
     const [userName, setUserName] = useState(" ");
     const [userEmail, setUserEmail] = useState(" ");
     const [userPassword, setUserPassword] = useState(" ");
@@ -30,65 +26,26 @@ const useFirebase = () => {
         setUserName(e.target.value);
     };
     const getEmail = (e) => {
-        console.log(e.target.value);
         setUserEmail(e.target.value);
     };
     const getPassword = (e) => {
-        console.log(e.target.value);
         setUserPassword(e.target.value);
     };
     const handleGoogleSignIn = () => {
-        setIsLogin(true);
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                setUser(result.user);
-                history.push("/");
-            })
-            .finally(() => setIsLogin(false))
-            .catch((err) => {
-                setError(err);
-            });
-    };
+        const googleProvider = new GoogleAuthProvider(); //Google Provider
+        return signInWithPopup(auth, googleProvider)
+    }
+    
     const handleGithubSignIn = () => {
-        setIsLogin(true);
-        signInWithPopup(auth, githubProvider)
-            .then((result) => {
-                setUser(result.user);
-                history.push("/");
-            })
-            .finally(() => setIsLogin(false))
-            .catch((err) => {
-                setError(err);
-            });
+        const githubProvider = new GithubAuthProvider()
+        return signInWithPopup(auth, githubProvider)
+    }
+    const registerWithEmailAndPass = () => {
+        return createUserWithEmailAndPassword(auth, userEmail, userPassword, userName)
     };
-    const registerWithEmailAndPass = (e) => {
-        e.preventDefault();
-        setIsLogin(true);
-        createUserWithEmailAndPassword(auth, userEmail, userPassword, userName)
-            .then((result) => {
-                setUser(result.user);
-                updateProfile(auth.currentUser, {
-                    displayName: userName,
-                });
-                history.push("/");
-            })
-            .catch((err) => {
-                setError(err.message)
-            })
-            .finally(() => setIsLogin(false));
-    };
-    const handleEmailAndPassword = (e) => {
-        e.preventDefault();
-        setIsLogin(true);
-        signInWithEmailAndPassword(auth, userEmail, userPassword)
-            .then((result) => {
-                setUser(result.user);
-                history.push("/");
-            })
-            .catch((err) => {
-                setError(err);
-            })
-            .finally(() => setIsLogin(false));
+    const handleEmailAndPassword = () => {
+        return signInWithEmailAndPassword(auth, userEmail, userPassword)
+            
     };
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -107,7 +64,6 @@ const useFirebase = () => {
         });
         setIsLogin(true)
     };
-    console.log(userName);
     return {
         handleGoogleSignIn,
         handleGithubSignIn,
@@ -115,11 +71,13 @@ const useFirebase = () => {
         registerWithEmailAndPass,
         getName,
         getEmail,
+        getPassword,
+        updateProfile,
         setIsLogin,
         setError,
         setUser,
-        getPassword,
         logOut,
+        userName,
         user,
         error,
         isLogin,

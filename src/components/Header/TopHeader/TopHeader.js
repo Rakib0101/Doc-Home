@@ -41,12 +41,14 @@ const TopHeader = () => {
                 <div className=''>
                     {(user?.email || user?.displayName) ? (
                         <div className="text-right relative">
-                            <h2
-                                onClick={toggle}
-                                className='cursor-pointer border-2 inline-block primary-color border-black px-2 py-1 rounded-full'
+                            <button                                onClick={toggle}
+                                className='cursor-pointer texl-right mt-1'
                             >
-                                {userIcon}
-                            </h2>
+                                {
+                                    user?.photoURL ? <img className="w-8 h-8 rounded-full" src={user.photoURL} alt="" />
+                                    : <span className="primary-color border-green-900 text-2xl px-2 py-1 border-2 rounded-full">{userIcon}</span>
+                                }
+                            </button>
                             <div>
                                 {profile === "show" ? (
                                     <UserProfile></UserProfile>

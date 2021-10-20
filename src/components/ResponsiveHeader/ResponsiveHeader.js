@@ -18,7 +18,7 @@ const ResponsiveHeader =({ fixed }) =>{
                                     className='leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase'
                                     to='/'
                                 >
-                                    <img className="w-36" src={logo} alt='' />
+                                    <img className='w-36' src={logo} alt='' />
                                 </Link>
                                 <button
                                     className='primary-color cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none'
@@ -74,6 +74,14 @@ const ResponsiveHeader =({ fixed }) =>{
                                             to='/tests'
                                         >
                                             Tests
+                                        </Link>
+                                    </li>
+                                    <li className='nav-item'>
+                                        <Link
+                                            className='px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug primary-color hover:opacity-75'
+                                            to='/my-account'
+                                        >
+                                            My Account
                                         </Link>
                                     </li>
                                     <li className='nav-item'>

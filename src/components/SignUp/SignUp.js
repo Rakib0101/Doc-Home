@@ -1,22 +1,82 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
-import signUp from '../../img/signup.png'
+import { Link, useHistory, useLocation } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import signUp from "../../img/signup.png";
 
 const SignUp = () => {
+    const googleImg = <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>;
+    const githubImg = <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>;
     const {
         handleGoogleSignIn,
         handleGithubSignIn,
         getName,
         getEmail,
         getPassword,
+        setError,
         error,
+        setUser,
+        setIsLogin,
+        auth,
+        userName,
+        updateProfile,
         registerWithEmailAndPass,
     } = useAuth();
-    const googleImg = <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>;
-    const githubImg = <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>;
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || "/";
+
+    const googleLogin = () => {
+        handleGoogleSignIn()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                history.push(redirect_uri);
+            })
+            .catch((err) => {
+                const error = err.message;
+                setError(error);
+            })
+            .finally(() => {
+                setIsLogin(false);
+            });
+    };
+    const githubLogin = () => {
+        handleGithubSignIn()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                history.push(redirect_uri);
+            })
+            .catch((err) => {
+                const error = err.message;
+                setError(error);
+            })
+            .finally(() => {
+                setIsLogin(false);
+            });
+    };
+    const emailPassRegister = (e) => {
+        e.preventDefault()
+        registerWithEmailAndPass()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                
+                updateProfile(auth?.currentUser, {
+                    displayName: userName
+                });
+                console.log(user);
+                history.push(redirect_uri);
+            })
+            .catch((err) => {
+                setError(err.message);
+                console.log(err.message);
+            })
+            .finally(() => {
+                setIsLogin(false);
+            });
+    };
     return (
         <div className='bg-color'>
             <div className='container mx-auto flex flex-col-reverse md:flex-row items-center'>
@@ -26,8 +86,8 @@ const SignUp = () => {
                         <p className='my-4'>
                             And enjoy life during the time you just saved!
                         </p>
-                        <p className="text-red-600">{error}</p>
-                        <form action='' onSubmit={registerWithEmailAndPass}>
+                        <p className='text-red-600'>{error}</p>
+                        <form action='' onSubmit={emailPassRegister}>
                             <div className='flex justify-between mb-2'>
                                 <div className='w-1/2 mr-2'>
                                     <label htmlFor=''>Full Name</label>
@@ -79,14 +139,15 @@ const SignUp = () => {
                             </div>
                         </form>
                         <div className='flex flex-col md:flex-row justify-between my-8'>
+                            <p>{error}</p>
                             <button
-                                onClick={handleGoogleSignIn}
+                                onClick={googleLogin}
                                 className='px-4 py-2 mb-2 md:mb-0 w-full mr-2 bg-color rounded'
                             >
                                 {googleImg} Sign up with Google
                             </button>
                             <button
-                                onClick={handleGithubSignIn}
+                                onClick={githubLogin}
                                 className='px-4 py-2 w-full md:ml-2 bg-color rounded'
                             >
                                 {githubImg} Sign up with Github
@@ -94,7 +155,10 @@ const SignUp = () => {
                         </div>
                         <h2 className='my-8'>
                             Already have an account ?{" "}
-                            <Link className='primary-color font-bold' to='/login'>
+                            <Link
+                                className='primary-color font-bold'
+                                to='/login'
+                            >
                                 Sign In
                             </Link>
                         </h2>
